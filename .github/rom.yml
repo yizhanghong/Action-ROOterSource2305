@@ -25,13 +25,13 @@ on:
 permissions:
   contents: write
 env:
-  REPO_URL: https://github.com/Doanduy09/ROOterSource2305.git
+  REPO_URL: https://github.com/77m4life/ROOterSource2305.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config-gdock
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
@@ -158,7 +158,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: steps.organize.outputs.status == 'success' && !cancelled()
         with:
-          name: DOANDUY-${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+          name: TVNPRO-${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: ${{ env.FIRMWARE }}
 
       - name: Generate release tag
