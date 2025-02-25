@@ -63,7 +63,12 @@ jobs:
           sudo timedatectl set-timezone "$TZ"
           sudo mkdir -p /workdir
           sudo chown $USER:$GROUPS /workdir
-
+          
+      - name: 安装 最新Go 1.23.1
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.23.1
+        
       - name: Clone source code
         working-directory: /workdir
         run: |
